@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 public enum GameEvent
 {
-    OnFoundObject,
-    OnFailToFindObject
+    OnFound,
+    OnFail,
+    OnHint
 }
 
 public static class EventManager
