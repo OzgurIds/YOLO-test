@@ -54,22 +54,16 @@ public class GameManager : MonoSingleton<GameManager>
         _differenceslots.RemoveAt(0);
     }
 
+    public void HighlightFoundClue(SpriteRenderer _renderertop, SpriteRenderer _rendererbottom)
+    {
+        _renderertop.color = new Color (_renderertop.color.r, _renderertop.color.g, _renderertop.color.b, (150f/255f));
+        _rendererbottom.color = new Color (_rendererbottom.color.r, _rendererbottom.color.g, _rendererbottom.color.b, (150f/255f));
+    }
+
     //Get hint on button press
     void GetHint()
     {
         //TODO: Highlight hitboxes around the clue in the hitbox list
-    }
-
-    //remove the found difference's hitbox so raycast can't detect
-    public void RemoveFoundDifference(GameObject removed)
-    {
-        GameObject parentofremove = removed.transform.parent.gameObject;
-        
-        int index = _differencehitboxes.IndexOf(parentofremove);
-
-        _differencehitboxes.RemoveAt(index);
-
-        parentofremove.SetActive(false);
     }
 }
 

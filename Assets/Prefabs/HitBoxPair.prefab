@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2641413002135314735}
   m_Layer: 0
   m_Name: HitBox Top
-  m_TagString: Untagged
+  m_TagString: NotFound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 8177471321811730583, guid: 87aaca0a643d54397ba969dab4fc8875, type: 3}
-  m_Color: {r: 1, g: 0.10849059, b: 0.10849059, a: 0.6117647}
+  m_Color: {r: 0.21650574, g: 1, b: 0.109803915, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 1141819978971717481}
   m_Layer: 0
   m_Name: HitBox Bottom
-  m_TagString: Untagged
+  m_TagString: NotFound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 8177471321811730583, guid: 87aaca0a643d54397ba969dab4fc8875, type: 3}
-  m_Color: {r: 1, g: 0.10849059, b: 0.10849059, a: 0.6117647}
+  m_Color: {r: 0.21650574, g: 1, b: 0.109803915, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
