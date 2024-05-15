@@ -31,7 +31,7 @@ public class RayCaster : MonoBehaviour
                     SpriteRenderer bottom = parent.GetChild(1).GetComponent<SpriteRenderer>();
 
 
-                    GameManager.Instance.HighlightFoundClue(top, bottom);
+                    GameManager.Instance.HighlightFoundClue(parent);
                     //Let game manager know player found a diff
                     EventManager.BroadCast(GameEvent.OnFound);
 

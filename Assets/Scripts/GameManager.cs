@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoSingleton<GameManager>
 {
@@ -16,7 +17,7 @@ public class GameManager : MonoSingleton<GameManager>
 
     //Colors to be changed on Success/Fail
     [SerializeField]
-    private Color CLR_losthealth, CLR_founddifference;
+    private Color CLR_losthealth, CLR_founddifference, CLR_hint, CLR_hitbox;
 
     private void OnEnable()
     {
@@ -36,7 +37,8 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (_healthbarslots.Count == 0)
         {
-            //TODO: Lose Con, Restart
+            //reload scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         _healthbarslots[0].color = CLR_losthealth;
@@ -48,22 +50,36 @@ public class GameManager : MonoSingleton<GameManager>
     {
         if (_differenceslots.Count == 1)
         {
-            //TODO: Win Con
+            //reload scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         _differenceslots[0].color = CLR_founddifference;
         _differenceslots.RemoveAt(0);
     }
 
-    public void HighlightFoundClue(SpriteRenderer _renderertop, SpriteRenderer _rendererbottom)
+    public void HighlightFoundClue(Transform hitboxparent)
     {
-        _renderertop.color = new Color (_renderertop.color.r, _renderertop.color.g, _renderertop.color.b, (150f/255f));
-        _rendererbottom.color = new Color (_rendererbottom.color.r, _rendererbottom.color.g, _rendererbottom.color.b, (150f/255f));
+        SpriteRenderer _renderertop = hitboxparent.GetChild(0).GetComponent<SpriteRenderer>();
+        SpriteRenderer _rendererbottom = hitboxparent.GetChild(1).GetComponent<SpriteRenderer>();
+
+        _renderertop.color = CLR_hitbox;
+        _rendererbottom.color = CLR_hitbox;
+
+        _differencehitboxes.Remove(hitboxparent.gameObject);
+
+
     }
 
     //Get hint on button press
     void GetHint()
     {
-        //TODO: Highlight hitboxes around the clue in the hitbox list
+        GameObject hint = _differencehitboxes[0];
+
+        SpriteRenderer top = hint.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        SpriteRenderer bottom = hint.transform.GetChild(1).GetComponent<SpriteRenderer>();
+
+        top.color = CLR_hint;
+        bottom.color = CLR_hint;
     }
 }
 

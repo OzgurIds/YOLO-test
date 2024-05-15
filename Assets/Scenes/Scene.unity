@@ -3022,6 +3022,8 @@ MonoBehaviour:
   - {fileID: 1559215585}
   CLR_losthealth: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   CLR_founddifference: {r: 0.08504076, g: 0.754717, b: 0, a: 1}
+  CLR_hint: {r: 1, g: 0, b: 0.045454502, a: 0.39215687}
+  CLR_hitbox: {r: 0, g: 0.031424284, b: 1, a: 0.5882353}
 --- !u!4 &1586900079
 Transform:
   m_ObjectHideFlags: 0
